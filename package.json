@@ -1,0 +1,66 @@
+{
+  "name": "jsontoenv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./assets/icon_app_v2.icns"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "authors": "Joaquin Cabello",
+            "name": "JSONtoENV",
+            "description": "Application transform JSON to ENV format"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.66",
+    "@electron-forge/maker-deb": "6.0.0-beta.66",
+    "@electron-forge/maker-rpm": "6.0.0-beta.66",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.66",
+    "@electron-forge/maker-zip": "6.0.0-beta.66",
+    "electron": "21.0.1",
+    "standard": "17.0.0"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  },
+  "resolutions": {
+    "got": "11.8.5"
+  }
+}
